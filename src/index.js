@@ -1,14 +1,5 @@
 import React from "react";
 import ReactDom from "react-dom";
-
-const App = () => {
-  return (
-    //jsx記法
-    <>
-      <h1>こんにちは</h1>
-      <p>おげんきですか</p>
-    </>
-  );
-};
+import App from "./App.js";
 
 ReactDom.render(<App />, document.getElementById("root"));
