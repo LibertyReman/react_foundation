@@ -14,6 +14,12 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
+  if (num % 3 === 0) {
+    setFaceShowFlag(true);
+  } else {
+    setFaceShowFlag(false);
+  }
+
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
