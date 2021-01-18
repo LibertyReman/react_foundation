@@ -5,7 +5,7 @@ const App = () => {
   console.log("first");
   //動的に変わるnum, numを更新するsetNumという関数を定義, 初期値0
   const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(true);
+  const [faceShowFlag, setFaceShowFlag] = useState(false);
   const onClickCountUp = () => {
     setNum(num + 1);
   };
@@ -14,12 +14,14 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
-  if (num % 3 === 0) {
-    setFaceShowFlag(true);
-  } else {
-    setFaceShowFlag(false);
+  if (num > 0) {
+    if (num % 3 === 0) {
+      //  faceShowFlagがfalseのとき右の要素を表示 */
+      faceShowFlag || setFaceShowFlag(true);
+    } else {
+      faceShowFlag && setFaceShowFlag(false);
+    }
   }
-
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
