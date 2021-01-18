@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 const App = () => {
@@ -14,14 +14,19 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
-  if (num > 0) {
-    if (num % 3 === 0) {
-      //  faceShowFlagがfalseのとき右の要素を表示 */
-      faceShowFlag || setFaceShowFlag(true);
-    } else {
-      faceShowFlag && setFaceShowFlag(false);
+  //numにだけ関心をもたせた関数 numの値が変化したときだけ呼ばれる
+  useEffect(() => {
+    console.log("useEffect");
+    if (num > 0) {
+      if (num % 3 === 0) {
+        //  faceShowFlagがfalseのとき右の要素を表示 */
+        faceShowFlag || setFaceShowFlag(true);
+      } else {
+        faceShowFlag && setFaceShowFlag(false);
+      }
     }
-  }
+  }, [num]);
+
   return (
     <>
       <h1 style={{ color: "red" }}>こんにちは</h1>
