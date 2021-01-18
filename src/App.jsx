@@ -5,6 +5,7 @@ const App = () => {
   const onClickCountUp = () => {
     setNum(num + 1);
   };
+
   //動的に変わるnum, numを更新するsetNumという関数を定義, 初期値0
   const [num, setNum] = useState(0);
   return (
